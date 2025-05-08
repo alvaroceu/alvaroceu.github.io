@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Acceso Seguro - RRHH</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f4f4f4;
+    }
+    form {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ccc;
+      display: flex;
+      flex-direction: column;
+      width: 300px;
+    }
+    input {
+      margin-bottom: 15px;
+      padding: 10px;
+      font-size: 1rem;
+    }
+    button {
+      padding: 10px;
+      font-size: 1rem;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:disabled {
+      background-color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <form id="loginForm">
+    <h2>Acceso Interno</h2>
+    <input type="text" id="usuario" placeholder="Usuario" required />
+    <input type="password" id="contrasena" placeholder="Contraseña" required />
+    <button type="submit" id="acceder">Acceder</button>
+  </form>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const usuario = document.getElementById("usuario").value;
+      const contrasena = document.getElementById("contrasena").value;
+
+      if (usuario && contrasena) {
+        window.location.href = "acceso.html";
+      }
+    });
+  </script>
+</body>
+</html>
